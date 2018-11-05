@@ -13,12 +13,5 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
 
-    function __construct(){
-    	$this -> DangNhap();
-    }
-    function DangNhap(){
-    	if(Auth::check()){
-    		view() -> share('user_login',Auth::user());
-    	}
-    }
+   
 }

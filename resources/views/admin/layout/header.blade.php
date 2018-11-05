@@ -19,15 +19,16 @@
                     </a>
 
                     <ul class="dropdown-menu dropdown-user">
-                        @if(isset($user_login)) 
-                        <li><i class="fa fa-user fa-fw"></i> {{ $user_login -> name }}</a>
+                        @if(Auth::check()) 
+                        <li><i class="fa fa-user fa-fw"></i> {{ Auth::user() -> name }}
                         </li>
-                        <li><a href="admin/user/sua/{{$user_login -> id}}"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <li><a href="admin/user/sua/{{Auth::user() -> id}}"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="admin/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                         @endif
+                
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>

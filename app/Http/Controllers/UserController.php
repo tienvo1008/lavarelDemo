@@ -124,5 +124,6 @@ class UserController extends Controller
     public function getdangxuatAdmin(){
         Auth::logout();
         return redirect('admin/dangnhap');
+       
     }
 }
